@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:jessie
+FROM resin/raspberrypi2-debian:jessie-20161010
 
 MAINTAINER Dagmawi Neway <d_mekuria@create-net.org>
 USER root
