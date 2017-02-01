@@ -10,9 +10,8 @@ RUN apt-get -y update
 RUN apt-get -y install git npm nodejs-legacy
 
 ## Clone the  Repo and install grunt ##
-RUN git clone https://github.com/Agile-IoT/Agile-OS.js.git OS.js
+COPY OS.js OS.js
 RUN npm install -g grunt-cli supervisor
-
 
 ## Install and build OS.js ##
 WORKDIR OS.js/
@@ -20,23 +19,23 @@ RUN npm install --production
 RUN grunt
 
 ## Install Grafana menu item
-RUN cd src/packages/default && git clone https://github.com/doitdagi/osjs-grafana.git Grafana
+COPY agile-grafana-osjs src/packages/default/Grafana
 RUN grunt manifest config packages:default/Grafana
 
 ## Install InfluxDB menu item
-RUN cd src/packages/default && git clone https://github.com/doitdagi/osjs-influxdb.git InfluxDB
+COPY agile-influxdb-osjs src/packages/default/InfluxDB
 RUN grunt manifest config packages:default/InfluxDB
 
 ## Install Node red menu item
-RUN cd src/packages/default && git clone https://github.com/muka/osjs-nodered NodeRed
+COPY osjs-nodered src/packages/default/NodeRed
 RUN grunt manifest config packages:default/NodeRed
 
 ## Install Node red Dashboard
-RUN cd src/packages/default && git clone https://github.com/doitdagi/agile-osjs-nodered-dashboard.git NodeRedDashboard
+COPY agile-nodered-dashboard-osjs src/packages/default/NodeRedDashboard
 RUN grunt manifest config packages:default/NodeRedDashboard
 
 ## Install Agile Device Manager
-RUN cd src/packages/default && git clone https://github.com/doitdagi/agile-devicemanager-osjs.git DeviceManager
+COPY agile-osjs-devicemanager src/packages/default/DeviceManager
 RUN grunt manifest config packages:default/DeviceManager
 
 ## Start Application and Expose Port ##
