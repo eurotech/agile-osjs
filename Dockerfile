@@ -10,7 +10,7 @@ RUN apt-get -y update
 RUN apt-get -y install git npm nodejs-legacy
 
 ## Clone the  Repo and install grunt ##
-RUN git clone https://github.com/doitdagi/OS.js.git
+RUN git clone https://github.com/Agile-IoT/Agile-OS.js.git OS.js
 RUN npm install -g grunt-cli supervisor
 
 
