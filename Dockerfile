@@ -32,6 +32,10 @@ RUN grunt manifest config packages:default/NodeRed
 COPY agile-nodered-dashboard-osjs src/packages/default/NodeRedDashboard
 RUN grunt manifest config packages:default/NodeRedDashboard
 
+## Install Node red Graphs
+COPY agile-contri-ui-osjs src/packages/default/NodeRedUI
+RUN grunt manifest config packages:default/NodeRedUI
+
 ## Install Agile Device Manager
 COPY agile-osjs-devicemanager src/packages/default/DeviceManager
 RUN grunt manifest config packages:default/DeviceManager
