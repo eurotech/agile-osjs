@@ -19,3 +19,6 @@
 [submodule "osjs-nodered"]
 	path = osjs-nodered
 	url = https://github.com/muka/osjs-nodered.git
+[submodule "agile-idm-osjs"]
+	path = agile-idm-osjs
+	url = https://github.com/Agile-IoT/agile-idm-osjs.git
