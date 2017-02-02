@@ -1,8 +1,5 @@
 FROM resin/raspberrypi2-debian:jessie-20161010
 
-MAINTAINER Dagmawi Neway <d_mekuria@create-net.org>
-USER root
-
 ## Install dependencies and build tools. ##
 RUN apt-get update && apt-get install --no-install-recommends -y \
   git \
