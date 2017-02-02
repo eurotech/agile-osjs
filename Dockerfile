@@ -3,11 +3,12 @@ FROM resin/raspberrypi2-debian:jessie-20161010
 MAINTAINER Dagmawi Neway <d_mekuria@create-net.org>
 USER root
 
-## Initial update of image ##
-RUN apt-get -y update
-
 ## Install dependencies and build tools. ##
-RUN apt-get -y install git npm nodejs-legacy
+RUN apt-get update && apt-get install --no-install-recommends -y \
+  git \
+  npm \
+  nodejs-legacy \
+  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ## Clone the  Repo and install grunt ##
 COPY OS.js OS.js
