@@ -17,7 +17,7 @@ RUN npm install --production
 
 ## Install Grafana menu item
 COPY agile-idm-osjs agile-idm-osjs
-RUN agile-idm-osjs/agile-osjs-install.sh
+RUN agile-idm-osjs/agile-osjs-install.sh agile-idm-osjs
 #RUN grunt
 
 ## Install Grafana menu item
