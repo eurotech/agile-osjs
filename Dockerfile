@@ -40,6 +40,10 @@ RUN grunt manifest config packages:default/NodeRedUI
 COPY agile-osjs-devicemanager src/packages/default/DeviceManager
 RUN grunt manifest config packages:default/DeviceManager
 
+## Install Agile Kura
+COPY agile-kura-osjs src/packages/default/Kura
+RUN grunt manifest config packages:default/Kura
+
 ## Start Application and Expose Port ##
 ## Note: you can change 'start-dev.sh' (Development Version) to 'start-dist.sh' (Production Version) ##
 

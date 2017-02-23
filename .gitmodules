@@ -19,3 +19,6 @@
 [submodule "osjs-nodered"]
 	path = osjs-nodered
 	url = https://github.com/muka/osjs-nodered.git
+[submodule "agile-kura-osjs"]
+	path = agile-kura-osjs
+	url = https://github.com/eurotech/agile-kura-osjs.git
